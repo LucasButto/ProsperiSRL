@@ -27,6 +27,8 @@ function Header() {
           <img
             src="/assets/Logos/prosperi-logo.webp"
             alt="PROSPERI"
+            width={168}
+            height={25}
             className="header__logo"
           />
         </button>

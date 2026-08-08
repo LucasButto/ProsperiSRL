@@ -67,13 +67,9 @@
   }
 
   &__logo {
-    height: 34px;
-    width: auto;
-    margin-bottom: 24px;
-
-    @media (min-width: 768px) {
-      height: 42px;
-    }
+    width: clamp(280px, 44vw, 620px);
+    height: auto;
+    margin: 4px 0 32px;
   }
 
   &__kicker {
@@ -85,8 +81,8 @@
   &__headline {
     font-family: var(--font-serif);
     font-weight: 300;
-    font-size: clamp(2.6rem, 6.5vw, 5.2rem);
-    line-height: 1.05;
+    font-size: clamp(2rem, 4.6vw, 3.6rem);
+    line-height: 1.1;
     letter-spacing: -0.01em;
     margin: 0;
     max-width: 16ch;
@@ -97,21 +93,8 @@
     }
   }
 
-  &__tagline {
-    margin: 28px 0 0;
-    max-width: 46ch;
-    font-size: 16px;
-    line-height: 1.7;
-    color: var(--text-muted);
-    font-weight: 300;
-
-    @media (min-width: 768px) {
-      font-size: 18px;
-    }
-  }
-
   &__cta-wrap {
-    margin-top: 44px;
+    margin-top: 40px;
   }
 
   &__cta {
