@@ -11,7 +11,11 @@ const CATEGORIAS = [
   { folder: "Alb", tipo: "Albañilería" },
   { folder: "Pintura", tipo: "Pintura" },
   { folder: "Revestimientos", tipo: "Revestimientos" },
-  { folder: "Trabajos en Altura", tipo: "Trabajos de Altura", singleProject: true },
+  {
+    folder: "Trabajos en Altura",
+    tipo: "Trabajos de Altura",
+    singleProject: true,
+  },
 ];
 
 const NOMBRE_OVERRIDES = {
@@ -47,9 +51,13 @@ function slugify(str) {
 }
 
 function buildProject(categoriaFolder, tipo, proyectoFolder, dirPath, nested) {
-  const files = fs.readdirSync(dirPath).filter((f) => fs.statSync(path.join(dirPath, f)).isFile());
+  const files = fs
+    .readdirSync(dirPath)
+    .filter((f) => fs.statSync(path.join(dirPath, f)).isFile());
   const portadaFile = files.find(isPortada);
-  const mediaFiles = files.filter((f) => !isPortada(f)).sort((a, b) => numericSortKey(a) - numericSortKey(b));
+  const mediaFiles = files
+    .filter((f) => !isPortada(f))
+    .sort((a, b) => numericSortKey(a) - numericSortKey(b));
 
   const nombre = NOMBRE_OVERRIDES[proyectoFolder] ?? proyectoFolder.trim();
   const publicBase = nested
@@ -59,16 +67,24 @@ function buildProject(categoriaFolder, tipo, proyectoFolder, dirPath, nested) {
   // Some projects were exported without an explicit cover photo; fall back to
   // the first image so every project still has a thumbnail.
   const portadaSourceFile = portadaFile || mediaFiles.find((f) => !isVideo(f));
-  const portada = portadaSourceFile ? `${publicBase}/${portadaSourceFile}` : null;
+  const portada = portadaSourceFile
+    ? `${publicBase}/${portadaSourceFile}`
+    : null;
 
   const media = [];
-  if (portadaFile) media.push({ type: "image", src: `${publicBase}/${portadaFile}` });
+  if (portadaFile)
+    media.push({ type: "image", src: `${publicBase}/${portadaFile}` });
   for (const f of mediaFiles) {
-    media.push({ type: isVideo(f) ? "video" : "image", src: `${publicBase}/${f}` });
+    media.push({
+      type: isVideo(f) ? "video" : "image",
+      src: `${publicBase}/${f}`,
+    });
   }
 
   return {
-    id: nested ? `${slugify(categoriaFolder)}-${slugify(proyectoFolder)}` : slugify(proyectoFolder),
+    id: nested
+      ? `${slugify(categoriaFolder)}-${slugify(proyectoFolder)}`
+      : slugify(proyectoFolder),
     nombre,
     anio: ANIO_DEFAULT,
     tipo,
@@ -87,9 +103,13 @@ for (const cat of CATEGORIAS) {
     continue;
   }
 
-  const subdirs = fs.readdirSync(catPath).filter((f) => fs.statSync(path.join(catPath, f)).isDirectory());
+  const subdirs = fs
+    .readdirSync(catPath)
+    .filter((f) => fs.statSync(path.join(catPath, f)).isDirectory());
   for (const sub of subdirs) {
-    result.push(buildProject(cat.folder, cat.tipo, sub, path.join(catPath, sub), true));
+    result.push(
+      buildProject(cat.folder, cat.tipo, sub, path.join(catPath, sub), true),
+    );
   }
 }
 

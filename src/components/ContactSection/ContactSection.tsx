@@ -22,8 +22,11 @@ function ContactSection() {
             <div>
               <dt className="kicker">Email</dt>
               <dd>
-                <a href="mailto:contacto@prosperi.com.ar" className="contact__link">
-                  contacto@prosperi.com.ar
+                <a
+                  href="mailto:consultas@prosperisrl.com"
+                  className="contact__link"
+                >
+                  consultas@prosperisrl.com
                 </a>
               </dd>
             </div>
