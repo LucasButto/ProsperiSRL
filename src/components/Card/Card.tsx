@@ -6,10 +6,11 @@ import "./Card.scss";
 
 interface CardProps {
   proyecto: Proyecto;
+  index: number;
   onClick: () => void;
 }
 
-function Card({ proyecto, onClick }: CardProps) {
+function Card({ proyecto, index, onClick }: CardProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(!proyecto.portada);
 
@@ -25,51 +26,60 @@ function Card({ proyecto, onClick }: CardProps) {
         if (e.key === "Enter" || e.key === " ") onClick();
       }}
     >
-      {isLoading && !hasError && <div className="card__skeleton" />}
+      <div className="card__media-frame">
+        {isLoading && !hasError && <div className="card__skeleton" />}
 
-      {hasError && <div className="card__error">{proyecto.nombre}</div>}
+        {hasError && <div className="card__error">{proyecto.nombre}</div>}
 
-      {!hasError && proyecto.portada && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: isLoading ? 0 : 1 }}
-          transition={{ duration: 0.5 }}
-          className="card__media"
+        {!hasError && proyecto.portada && (
+          <motion.div
+            variants={{ rest: { scale: 1 }, hover: { scale: 1.04 } }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="card__media"
+          >
+            <img
+              src={encodeAssetPath(proyecto.portada)}
+              alt={proyecto.nombre}
+              className="card__media-el"
+              loading="lazy"
+              decoding="async"
+              onLoad={() => setIsLoading(false)}
+              onError={() => {
+                setIsLoading(false);
+                setHasError(true);
+              }}
+            />
+          </motion.div>
+        )}
+
+        <span className="card__index">N.{String(index).padStart(2, "0")}</span>
+        <span className="card__tipo">{proyecto.tipo.toUpperCase()}</span>
+
+        <motion.span
+          variants={{ rest: { opacity: 0 }, hover: { opacity: 1 } }}
+          transition={{ duration: 0.15 }}
+          className="card__crosshair card__crosshair--tl"
         >
-          <img
-            src={encodeAssetPath(proyecto.portada)}
-            alt={proyecto.nombre}
-            className="card__media-el"
-            loading="lazy"
-            decoding="async"
-            onLoad={() => setIsLoading(false)}
-            onError={() => {
-              setIsLoading(false);
-              setHasError(true);
-            }}
-          />
-        </motion.div>
-      )}
+          +
+        </motion.span>
+        <motion.span
+          variants={{ rest: { opacity: 0 }, hover: { opacity: 1 } }}
+          transition={{ duration: 0.15 }}
+          className="card__crosshair card__crosshair--br"
+        >
+          +
+        </motion.span>
+      </div>
 
-      <motion.div
-        variants={{
-          rest: { opacity: 0 },
-          hover: { opacity: 1 },
-        }}
-        transition={{ duration: 0.3 }}
-        className="card__overlay"
-      >
-        <div className="card__overlay-top">
-          <span className="card__tipo">{proyecto.tipo.toUpperCase()}</span>
-          <span className="card__galeria">
-            {proyecto.media.length} {proyecto.media.length === 1 ? "FOTO" : "FOTOS"}
+      <div className="card__info">
+        <h3 className="card__titulo">{proyecto.nombre}</h3>
+        <div className="card__meta">
+          <span>{proyecto.anio}</span>
+          <span>
+            {proyecto.media.length} {proyecto.media.length === 1 ? "ARCHIVO" : "ARCHIVOS"}
           </span>
         </div>
-
-        <h3 className="card__titulo">{proyecto.nombre}</h3>
-
-        <span className="card__anio">{proyecto.anio}</span>
-      </motion.div>
+      </div>
     </motion.div>
   );
 }

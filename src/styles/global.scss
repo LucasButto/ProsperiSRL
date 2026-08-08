@@ -1,25 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 :root {
-  --color-black: #000;
-  --color-white: #fff;
-  --color-neutral-900: #171717;
-  --color-neutral-800: #262626;
-  --color-neutral-700: #404040;
-  --color-neutral-600: #525252;
-  --color-neutral-500: #737373;
-  --color-neutral-400: #a3a3a3;
+  /* substrate — matte documentation paper */
+  --color-paper: #f1efe6;
+  --color-paper-dim: #e7e3d5;
+  --color-paper-deep: #dcd7c6;
 
-  --font-sans: 'Inter', system-ui, sans-serif;
+  /* ink */
+  --color-ink: #0d0d0b;
+  --color-ink-soft: #55534a;
+  --color-ink-faint: #8f8c7c;
+
+  /* the only accent */
+  --color-red: #e0261d;
+  --color-red-deep: #a91b15;
+
+  /* dark counter-surface (gallery / overlays only) */
+  --color-dark: #0a0a09;
+  --color-phosphor: #ececE2;
+
+  --font-display: 'Archivo Black', 'Arial Black', sans-serif;
+  --font-sans: 'Archivo', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+
+  --line: 1px solid var(--color-ink);
+  --line-soft: 1px solid rgba(13, 13, 11, 0.18);
 
   --max-width-3xl: 768px;
-  --max-width-4xl: 896px;
-  --max-width-6xl: 1152px;
+  --max-width-4xl: 960px;
+  --max-width-6xl: 1200px;
+  --max-width-7xl: 1440px;
 }
 
 * {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
+  border-radius: 0 !important;
 }
 
 html {
@@ -29,9 +45,21 @@ html {
 body {
   margin: 0;
   font-family: var(--font-sans);
-  background: var(--color-black);
-  color: var(--color-white);
-  font-weight: 300;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-weight: 400;
+  position: relative;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  pointer-events: none;
+  opacity: 0.045;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 button,
@@ -40,7 +68,40 @@ textarea {
   font-family: inherit;
 }
 
+img,
+video {
+  max-width: 100%;
+  display: block;
+}
+
 ::selection {
-  background: #333;
-  color: var(--color-white);
+  background: var(--color-red);
+  color: var(--color-paper);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-paper-dim);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-ink);
+}
+
+/* shared technical vocabulary, reused across sections */
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.section-index {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--color-ink-soft);
 }

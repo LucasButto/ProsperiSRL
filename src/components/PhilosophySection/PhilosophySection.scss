@@ -1,38 +1,50 @@
 .philosophy {
   padding: 80px 20px;
-  border-top: 1px solid var(--color-neutral-900);
+  border-top: 2px solid var(--color-ink);
 
-  @media (min-width: 768px) {
-    padding: 112px 20px;
+  @media (min-width: 1024px) {
+    padding: 112px 40px;
   }
 
   &__container {
-    max-width: var(--max-width-3xl);
+    max-width: var(--max-width-4xl);
     margin: 0 auto;
   }
 
-  &__title {
-    font-size: 24px;
-    font-weight: 300;
-    letter-spacing: -0.01em;
-    margin: 0 0 40px;
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 48px;
+  }
 
-    @media (min-width: 768px) {
-      font-size: 30px;
-    }
+  &__title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 6vw, 3.4rem);
+    letter-spacing: -0.02em;
+    line-height: 0.9;
+    text-transform: uppercase;
+    margin: 0;
   }
 
   &__text {
     display: flex;
     flex-direction: column;
     gap: 32px;
-    color: var(--color-neutral-400);
-    font-weight: 300;
+    color: var(--color-ink-soft);
     line-height: 1.7;
     font-size: 16px;
 
     p {
       margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      @media (min-width: 640px) {
+        flex-direction: row;
+        gap: 24px;
+      }
     }
 
     @media (min-width: 768px) {
@@ -40,26 +52,55 @@
     }
   }
 
+  &__marker {
+    flex-shrink: 0;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--color-red);
+    padding-top: 4px;
+
+    @media (min-width: 640px) {
+      width: 56px;
+    }
+  }
+
   &__grid {
-    margin-top: 56px;
+    margin: 56px 0 0;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 32px;
-    font-size: 14px;
+    border: 1px solid var(--color-ink);
 
     @media (min-width: 640px) {
       grid-template-columns: repeat(3, 1fr);
     }
   }
 
-  &__label {
-    font-size: 12px;
-    letter-spacing: 0.15em;
-    color: var(--color-neutral-500);
-    margin-bottom: 8px;
+  &__item {
+    padding: 20px 24px;
+    border-top: 1px solid var(--color-ink);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &:first-child {
+      border-top: none;
+    }
+
+    @media (min-width: 640px) {
+      border-top: none;
+      border-left: 1px solid var(--color-ink);
+
+      &:first-child {
+        border-left: none;
+      }
+    }
   }
 
   &__value {
-    font-weight: 300;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0;
   }
 }

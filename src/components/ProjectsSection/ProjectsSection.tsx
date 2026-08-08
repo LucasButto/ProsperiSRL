@@ -36,15 +36,19 @@ function ProjectsSection() {
     <section id="proyectos" className="projects">
       <div className="projects__container">
         <div className="projects__header">
-          <h2 className="projects__title">PROYECTOS</h2>
+          <div className="projects__title-block">
+            <span className="mono-label">SECCIÓN 02</span>
+            <h2 className="projects__title">PROYECTOS</h2>
+          </div>
 
           <div className="projects__filters">
-            {CATEGORIAS.map((cat) => (
+            {CATEGORIAS.map((cat, i) => (
               <button
                 key={cat}
                 onClick={() => handleFiltro(cat)}
                 className={`projects__filter${filtro === cat ? " projects__filter--active" : ""}`}
               >
+                <span className="projects__filter-index">{String(i).padStart(2, "0")}</span>
                 {cat.toUpperCase()}
               </button>
             ))}
@@ -53,16 +57,20 @@ function ProjectsSection() {
 
         <motion.div layout className="projects__grid">
           <AnimatePresence mode="popLayout">
-            {proyectosVisibles.map((proyecto) => (
+            {proyectosVisibles.map((proyecto, i) => (
               <motion.div
                 key={proyecto.id}
                 layout
-                initial={{ opacity: 0, scale: 0.96 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.96 }}
-                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
               >
-                <Card proyecto={proyecto} onClick={() => setProyectoActivo(proyecto)} />
+                <Card
+                  proyecto={proyecto}
+                  index={i + 1}
+                  onClick={() => setProyectoActivo(proyecto)}
+                />
               </motion.div>
             ))}
           </AnimatePresence>
@@ -70,7 +78,7 @@ function ProjectsSection() {
 
         {esMobile && proyectosFiltrados.length > LIMITE_MOBILE && (
           <button className="projects__ver-mas" onClick={() => setVerTodos((v) => !v)}>
-            {verTodos ? "VER MENOS" : "VER MÁS"}
+            [ {verTodos ? "VER MENOS" : "VER MÁS"} ]
           </button>
         )}
       </div>

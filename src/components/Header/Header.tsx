@@ -4,9 +4,9 @@ import { scrollToSection } from "../../utils/scrollTo";
 import "./Header.scss";
 
 const NAV_LINKS = [
-  { id: "proyectos", label: "PROYECTOS" },
-  { id: "filosofia", label: "FILOSOFÍA" },
-  { id: "contacto", label: "CONTACTO" },
+  { id: "proyectos", index: "01", label: "PROYECTOS" },
+  { id: "filosofia", index: "02", label: "FILOSOFÍA" },
+  { id: "contacto", index: "03", label: "CONTACTO" },
 ];
 
 function Header() {
@@ -38,6 +38,7 @@ function Header() {
               className="header__nav-link"
               onClick={() => handleNavigate(link.id)}
             >
+              <span className="header__nav-index">{link.index}</span>
               {link.label}
             </button>
           ))}
@@ -48,7 +49,7 @@ function Header() {
           onClick={() => setMenuOpen(!menuOpen)}
           aria-expanded={menuOpen}
         >
-          {menuOpen ? "CERRAR" : "MENÚ"}
+          [ {menuOpen ? "CERRAR" : "MENÚ"} ]
         </button>
       </div>
 
@@ -58,6 +59,7 @@ function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
             className="header__mobile-menu"
           >
             <div className="header__mobile-links">
@@ -67,6 +69,7 @@ function Header() {
                   className="header__mobile-link"
                   onClick={() => handleNavigate(link.id)}
                 >
+                  <span className="header__nav-index">{link.index}</span>
                   {link.label}
                 </button>
               ))}

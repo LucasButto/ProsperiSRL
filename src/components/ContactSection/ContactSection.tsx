@@ -10,44 +10,59 @@ function ContactSection() {
   return (
     <section id="contacto" className="contact">
       <div className="contact__container">
-        <h2 className="contact__title">CONTACTO</h2>
+        <div className="contact__header">
+          <span className="mono-label">SECCIÓN 04</span>
+          <h2 className="contact__title">CONTACTO</h2>
+        </div>
 
         <div className="contact__grid">
-          <div className="contact__info">
+          <dl className="contact__info">
             <div>
-              <div className="contact__label">EMAIL</div>
-              <a href="mailto:contacto@prosperi.com.ar" className="contact__link">
-                contacto@prosperi.com.ar
-              </a>
+              <dt className="mono-label">EMAIL</dt>
+              <dd>
+                <a href="mailto:contacto@prosperi.com.ar" className="contact__link">
+                  contacto@prosperi.com.ar
+                </a>
+              </dd>
             </div>
             <div>
-              <div className="contact__label">UBICACIÓN</div>
-              <div>Rosario, Santa Fe, Argentina</div>
+              <dt className="mono-label">UBICACIÓN</dt>
+              <dd>Rosario, Santa Fe, Argentina</dd>
             </div>
             <div>
-              <div className="contact__label">INSTAGRAM</div>
-              <a
-                href="https://www.instagram.com/prosperisrl/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="contact__link"
-              >
-                @prosperisrl
-              </a>
+              <dt className="mono-label">INSTAGRAM</dt>
+              <dd>
+                <a
+                  href="https://www.instagram.com/prosperisrl/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact__link"
+                >
+                  @prosperisrl
+                </a>
+              </dd>
             </div>
-          </div>
+          </dl>
 
           <form onSubmit={handleSubmit} className="contact__form">
-            <input type="text" placeholder="Nombre" required className="contact__input" />
-            <input type="email" placeholder="Email" required className="contact__input" />
-            <textarea
-              placeholder="Mensaje"
-              rows={4}
-              required
-              className="contact__input contact__input--textarea"
-            />
+            <label className="contact__field">
+              <span className="mono-label">NOMBRE</span>
+              <input type="text" required className="contact__input" />
+            </label>
+            <label className="contact__field">
+              <span className="mono-label">EMAIL</span>
+              <input type="email" required className="contact__input" />
+            </label>
+            <label className="contact__field">
+              <span className="mono-label">MENSAJE</span>
+              <textarea
+                rows={4}
+                required
+                className="contact__input contact__input--textarea"
+              />
+            </label>
             <button type="submit" className="contact__submit">
-              ENVIAR
+              [ ENVIAR MENSAJE ]
             </button>
           </form>
         </div>
