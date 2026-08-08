@@ -4,20 +4,22 @@
   left: 0;
   right: 0;
   z-index: 50;
-  background: var(--color-paper);
-  border-bottom: 2px solid var(--color-ink);
+  background: rgba(19, 18, 17, 0.7);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
 
   &__inner {
     max-width: var(--max-width-7xl);
     margin: 0 auto;
-    padding: 0 20px;
-    height: 68px;
+    padding: 0 24px;
+    height: 76px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     @media (min-width: 1024px) {
-      padding: 0 40px;
+      padding: 0 48px;
     }
   }
 
@@ -27,104 +29,140 @@
     padding: 0;
     cursor: pointer;
     line-height: 0;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.75;
+    }
   }
 
   &__logo {
-    height: 20px;
+    height: 22px;
     width: auto;
     display: block;
-    filter: brightness(0);
 
     @media (min-width: 768px) {
-      height: 24px;
+      height: 26px;
     }
   }
 
   &__nav {
     display: none;
-    align-items: stretch;
-    height: 68px;
-    margin-right: -20px;
+    align-items: center;
+    gap: 40px;
 
     @media (min-width: 768px) {
       display: flex;
     }
-
-    @media (min-width: 1024px) {
-      margin-right: -40px;
-    }
   }
 
-  &__nav-link,
-  &__mobile-link {
+  &__nav-link {
+    position: relative;
     background: none;
     border: none;
-    border-left: 1px solid rgba(13, 13, 11, 0.18);
-    color: var(--color-ink-soft);
-    font-family: var(--font-mono);
-    font-size: 12px;
-    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    font-size: 14px;
+    letter-spacing: 0.01em;
     cursor: pointer;
-    padding: 0 22px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: color 0.15s ease, background 0.15s ease;
+    padding: 4px 0;
+    transition: color 0.2s ease;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 100%;
+      bottom: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: right 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
 
     &:hover {
-      color: var(--color-ink);
-      background: var(--color-paper-dim);
-    }
+      color: var(--text);
 
-    &:last-child {
-      border-right: 1px solid rgba(13, 13, 11, 0.18);
+      &::after {
+        right: 0;
+      }
     }
-  }
-
-  &__nav-index {
-    color: var(--color-red);
   }
 
   &__menu-toggle {
-    display: block;
+    display: flex;
     background: none;
     border: none;
-    color: var(--color-ink);
-    font-family: var(--font-mono);
-    font-size: 12px;
-    letter-spacing: 0.1em;
     cursor: pointer;
-    padding: 0;
+    padding: 8px;
+    margin: -8px;
 
     @media (min-width: 768px) {
       display: none;
+    }
+  }
+
+  &__menu-icon {
+    position: relative;
+    width: 20px;
+    height: 14px;
+
+    span {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--text);
+      transition: transform 0.25s ease, top 0.25s ease, opacity 0.2s ease;
+
+      &:first-child {
+        top: 0;
+      }
+
+      &:last-child {
+        top: 100%;
+      }
+    }
+
+    &--open {
+      span:first-child {
+        top: 50%;
+        transform: rotate(45deg);
+      }
+
+      span:last-child {
+        top: 50%;
+        transform: rotate(-45deg);
+      }
     }
   }
 
   &__mobile-menu {
-    overflow: hidden;
-    border-top: 2px solid var(--color-ink);
-    background: var(--color-paper);
+    position: fixed;
+    inset: 76px 0 0;
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 24px;
 
     @media (min-width: 768px) {
       display: none;
     }
   }
 
-  &__mobile-links {
-    display: flex;
-    flex-direction: column;
-  }
-
   &__mobile-link {
-    justify-content: flex-start;
-    height: 52px;
-    padding: 0 20px;
-    border-left: none;
-    border-top: 1px solid rgba(13, 13, 11, 0.18);
+    text-align: left;
+    background: none;
+    border: none;
+    border-top: 1px solid var(--border);
+    padding: 22px 0;
+    font-family: var(--font-serif);
+    font-size: 40px;
+    color: var(--text);
+    cursor: pointer;
 
     &:last-child {
-      border-right: none;
+      border-bottom: 1px solid var(--border);
     }
   }
 }

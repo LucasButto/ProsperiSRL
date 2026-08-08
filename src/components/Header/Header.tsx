@@ -4,9 +4,9 @@ import { scrollToSection } from "../../utils/scrollTo";
 import "./Header.scss";
 
 const NAV_LINKS = [
-  { id: "proyectos", index: "01", label: "PROYECTOS" },
-  { id: "filosofia", index: "02", label: "FILOSOFÍA" },
-  { id: "contacto", index: "03", label: "CONTACTO" },
+  { id: "proyectos", label: "Proyectos" },
+  { id: "filosofia", label: "Filosofía" },
+  { id: "contacto", label: "Contacto" },
 ];
 
 function Header() {
@@ -38,7 +38,6 @@ function Header() {
               className="header__nav-link"
               onClick={() => handleNavigate(link.id)}
             >
-              <span className="header__nav-index">{link.index}</span>
               {link.label}
             </button>
           ))}
@@ -49,31 +48,34 @@ function Header() {
           onClick={() => setMenuOpen(!menuOpen)}
           aria-expanded={menuOpen}
         >
-          [ {menuOpen ? "CERRAR" : "MENÚ"} ]
+          <span className={`header__menu-icon${menuOpen ? " header__menu-icon--open" : ""}`}>
+            <span />
+            <span />
+          </span>
         </button>
       </div>
 
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
             className="header__mobile-menu"
           >
-            <div className="header__mobile-links">
-              {NAV_LINKS.map((link) => (
-                <button
-                  key={link.id}
-                  className="header__mobile-link"
-                  onClick={() => handleNavigate(link.id)}
-                >
-                  <span className="header__nav-index">{link.index}</span>
-                  {link.label}
-                </button>
-              ))}
-            </div>
+            {NAV_LINKS.map((link, i) => (
+              <motion.button
+                key={link.id}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.05 * i, ease: [0.16, 1, 0.3, 1] }}
+                className="header__mobile-link"
+                onClick={() => handleNavigate(link.id)}
+              >
+                {link.label}
+              </motion.button>
+            ))}
           </motion.div>
         )}
       </AnimatePresence>

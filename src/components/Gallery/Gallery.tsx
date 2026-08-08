@@ -51,7 +51,7 @@ function Gallery({ proyecto, onClose }: GalleryProps) {
         <div className="gallery__info">
           <h3 className="gallery__nombre">{proyecto.nombre}</h3>
           <span className="gallery__meta">
-            [ {proyecto.tipo.toUpperCase()} · {proyecto.anio} ]
+            {proyecto.tipo} · {proyecto.anio}
           </span>
         </div>
         <button
@@ -59,7 +59,7 @@ function Gallery({ proyecto, onClose }: GalleryProps) {
           onClick={onClose}
           aria-label="Cerrar galería"
         >
-          [ CERRAR ]
+          Cerrar
         </button>
       </div>
 
@@ -121,7 +121,7 @@ function Gallery({ proyecto, onClose }: GalleryProps) {
       {media.length > 1 && (
         <div className="gallery__footer" onClick={(e) => e.stopPropagation()}>
           <span className="gallery__counter">
-            ARCHIVO {String(index + 1).padStart(2, "0")} / {String(media.length).padStart(2, "0")}
+            {String(index + 1).padStart(2, "0")} / {String(media.length).padStart(2, "0")}
           </span>
           <div className="gallery__thumbs">
             {media.map((item, i) => (

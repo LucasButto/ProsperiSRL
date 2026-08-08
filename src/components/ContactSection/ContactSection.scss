@@ -1,40 +1,43 @@
 .contact {
-  padding: 80px 20px;
-  border-top: 2px solid var(--color-ink);
+  padding: 100px 24px;
+  border-top: 1px solid var(--border);
 
   @media (min-width: 1024px) {
-    padding: 112px 40px;
+    padding: 140px 48px;
   }
 
   &__container {
-    max-width: var(--max-width-4xl);
+    max-width: var(--max-width-6xl);
     margin: 0 auto;
   }
 
-  &__header {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 48px;
+  &__intro {
+    margin-bottom: 64px;
   }
 
   &__title {
-    font-family: var(--font-display);
-    font-size: clamp(2rem, 6vw, 3.4rem);
-    letter-spacing: -0.02em;
-    line-height: 0.9;
-    text-transform: uppercase;
-    margin: 0;
+    font-family: var(--font-serif);
+    font-weight: 300;
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    margin: 20px 0 0;
+    max-width: 16ch;
+
+    em {
+      font-style: italic;
+      color: var(--accent);
+    }
   }
 
   &__grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 0;
-    border: 1px solid var(--color-ink);
+    gap: 56px;
 
     @media (min-width: 768px) {
-      grid-template-columns: 1fr 1.4fr;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 80px;
     }
   }
 
@@ -42,72 +45,54 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    padding: 8px 0;
-    border-bottom: 1px solid var(--color-ink);
-
-    @media (min-width: 768px) {
-      border-bottom: none;
-      border-right: 1px solid var(--color-ink);
-    }
-
-    div {
-      padding: 16px 24px;
-    }
-
-    dt {
-      margin-bottom: 6px;
-    }
+    gap: 32px;
 
     dd {
-      margin: 0;
-      font-size: 15px;
-      font-weight: 600;
+      margin: 10px 0 0;
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--text-muted);
     }
   }
 
   &__link {
     color: inherit;
     text-decoration: none;
-    border-bottom: 1px solid var(--color-ink-faint);
-    transition: color 0.15s ease, border-color 0.15s ease;
+    border-bottom: 1px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
 
     &:hover {
-      color: var(--color-red);
-      border-color: var(--color-red);
+      color: var(--accent);
+      border-color: var(--accent);
     }
   }
 
   &__form {
     display: flex;
     flex-direction: column;
-    padding: 24px;
-    gap: 20px;
+    gap: 28px;
   }
 
   &__field {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-
-    .mono-label {
-      color: var(--color-ink-soft);
-    }
+    gap: 10px;
   }
 
   &__input {
     width: 100%;
     background: transparent;
-    border: 1px solid var(--color-ink);
-    padding: 12px 14px;
-    font-family: var(--font-sans);
-    font-size: 14px;
-    color: var(--color-ink);
-    transition: border-color 0.15s ease, background 0.15s ease;
+    border: none;
+    border-bottom: 1px solid var(--border-strong);
+    padding: 8px 0 12px;
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--text);
+    transition: border-color 0.2s ease;
 
     &:focus {
       outline: none;
-      border-color: var(--color-red);
-      background: var(--color-paper-dim);
+      border-color: var(--accent);
     }
 
     &--textarea {
@@ -116,20 +101,31 @@
   }
 
   &__submit {
-    background: var(--color-ink);
-    color: var(--color-paper);
-    font-family: var(--font-mono);
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    border: 2px solid var(--color-ink);
-    padding: 14px 28px;
-    cursor: pointer;
-    transition: color 0.15s ease, background 0.15s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     align-self: flex-start;
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--border-strong);
+    color: var(--text);
+    font-size: 15px;
+    padding: 0 0 8px;
+    margin-top: 8px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, gap 0.2s ease;
 
     &:hover {
-      background: var(--color-red);
-      border-color: var(--color-red);
+      border-color: var(--accent);
+      gap: 16px;
+
+      .contact__submit-arrow {
+        color: var(--accent);
+      }
     }
+  }
+
+  &__submit-arrow {
+    transition: color 0.2s ease;
   }
 }

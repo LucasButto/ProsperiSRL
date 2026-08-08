@@ -4,10 +4,9 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer__inner">
-        <span className="footer__brand">PROSPERI®</span>
-        <span className="footer__bars" aria-hidden="true" />
+        <span className="footer__brand">Prosperi</span>
         <span className="footer__legal">
-          © {new Date().getFullYear()} PROSPERI SRL — CONSTRUCCIÓN DE ALTO ESTÁNDAR — ROSARIO, ARGENTINA
+          © {new Date().getFullYear()} — Construcción de alto estándar, Rosario
         </span>
       </div>
     </footer>

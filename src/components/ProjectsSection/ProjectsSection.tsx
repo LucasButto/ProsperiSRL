@@ -37,19 +37,18 @@ function ProjectsSection() {
       <div className="projects__container">
         <div className="projects__header">
           <div className="projects__title-block">
-            <span className="mono-label">SECCIÓN 02</span>
-            <h2 className="projects__title">PROYECTOS</h2>
+            <span className="kicker">Trabajo seleccionado</span>
+            <h2 className="projects__title">Proyectos</h2>
           </div>
 
           <div className="projects__filters">
-            {CATEGORIAS.map((cat, i) => (
+            {CATEGORIAS.map((cat) => (
               <button
                 key={cat}
                 onClick={() => handleFiltro(cat)}
                 className={`projects__filter${filtro === cat ? " projects__filter--active" : ""}`}
               >
-                <span className="projects__filter-index">{String(i).padStart(2, "0")}</span>
-                {cat.toUpperCase()}
+                {cat}
               </button>
             ))}
           </div>
@@ -61,16 +60,16 @@ function ProjectsSection() {
               <motion.div
                 key={proyecto.id}
                 layout
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                transition={{
+                  duration: 0.5,
+                  delay: (i % 6) * 0.05,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
               >
-                <Card
-                  proyecto={proyecto}
-                  index={i + 1}
-                  onClick={() => setProyectoActivo(proyecto)}
-                />
+                <Card proyecto={proyecto} onClick={() => setProyectoActivo(proyecto)} />
               </motion.div>
             ))}
           </AnimatePresence>
@@ -78,7 +77,7 @@ function ProjectsSection() {
 
         {esMobile && proyectosFiltrados.length > LIMITE_MOBILE && (
           <button className="projects__ver-mas" onClick={() => setVerTodos((v) => !v)}>
-            [ {verTodos ? "VER MENOS" : "VER MÁS"} ]
+            {verTodos ? "Ver menos" : "Ver más"}
           </button>
         )}
       </div>
