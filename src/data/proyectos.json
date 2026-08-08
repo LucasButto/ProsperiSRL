@@ -1,0 +1,398 @@
+[
+  {
+    "id": "alb-buchanan-462",
+    "nombre": "Buchanan 462",
+    "anio": "2026",
+    "tipo": "Albañilería",
+    "portada": "/assets/Fotos/Alb/Buchanan 462/Foto-portada.webp",
+    "media": [
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Alb/Buchanan 462/Foto-portada.webp"
+      },
+      {
+        "type": "video",
+        "src": "/assets/Fotos/Alb/Buchanan 462/2.mov"
+      },
+      {
+        "type": "video",
+        "src": "/assets/Fotos/Alb/Buchanan 462/3.mov"
+      },
+      {
+        "type": "video",
+        "src": "/assets/Fotos/Alb/Buchanan 462/4.mov"
+      },
+      {
+        "type": "video",
+        "src": "/assets/Fotos/Alb/Buchanan 462/5.mov"
+      },
+      {
+        "type": "video",
+        "src": "/assets/Fotos/Alb/Buchanan 462/6.mov"
+      }
+    ]
+  },
+  {
+    "id": "alb-la-paz",
+    "nombre": "La Paz",
+    "anio": "2026",
+    "tipo": "Albañilería",
+    "portada": "/assets/Fotos/Alb/La paz/Foto-portada.webp",
+    "media": [
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Alb/La paz/Foto-portada.webp"
+      },
+      {
+        "type": "video",
+        "src": "/assets/Fotos/Alb/La paz/2.mov"
+      },
+      {
+        "type": "video",
+        "src": "/assets/Fotos/Alb/La paz/3.mov"
+      },
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Alb/La paz/4.webp"
+      },
+      {
+        "type": "video",
+        "src": "/assets/Fotos/Alb/La paz/5.mov"
+      }
+    ]
+  },
+  {
+    "id": "alb-pje-zavalla-1",
+    "nombre": "Pje. Zavalla 1",
+    "anio": "2026",
+    "tipo": "Albañilería",
+    "portada": "/assets/Fotos/Alb/Pje. Zavalla 1/2.webp",
+    "media": [
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Alb/Pje. Zavalla 1/2.webp"
+      },
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Alb/Pje. Zavalla 1/3.webp"
+      },
+      {
+        "type": "video",
+        "src": "/assets/Fotos/Alb/Pje. Zavalla 1/4.mov"
+      },
+      {
+        "type": "video",
+        "src": "/assets/Fotos/Alb/Pje. Zavalla 1/5.mov"
+      },
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Alb/Pje. Zavalla 1/7.webp"
+      },
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Alb/Pje. Zavalla 1/8.webp"
+      },
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Alb/Pje. Zavalla 1/9.webp"
+      },
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Alb/Pje. Zavalla 1/10.webp"
+      },
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Alb/Pje. Zavalla 1/11.webp"
+      },
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Alb/Pje. Zavalla 1/12.webp"
+      }
+    ]
+  },
+  {
+    "id": "pintura-kentucky-p",
+    "nombre": "Kentucky",
+    "anio": "2026",
+    "tipo": "Pintura",
+    "portada": "/assets/Fotos/Pintura/Kentucky P/Foto portada.webp",
+    "media": [
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Pintura/Kentucky P/Foto portada.webp"
+      },
+      {
+        "type": "video",
+        "src": "/assets/Fotos/Pintura/Kentucky P/2.mov"
+      },
+      {
+        "type": "video",
+        "src": "/assets/Fotos/Pintura/Kentucky P/3.mov"
+      },
+      {
+        "type": "video",
+        "src": "/assets/Fotos/Pintura/Kentucky P/4.mov"
+      }
+    ]
+  },
+  {
+    "id": "pintura-zeballos",
+    "nombre": "Zeballos",
+    "anio": "2026",
+    "tipo": "Pintura",
+    "portada": "/assets/Fotos/Pintura/Zeballos/Foto portada_.webp",
+    "media": [
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Pintura/Zeballos/Foto portada_.webp"
+      },
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Pintura/Zeballos/2.webp"
+      },
+      {
+        "type": "video",
+        "src": "/assets/Fotos/Pintura/Zeballos/3.mov"
+      },
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Pintura/Zeballos/4.webp"
+      }
+    ]
+  },
+  {
+    "id": "revestimientos-aguadas",
+    "nombre": "Aguadas",
+    "anio": "2026",
+    "tipo": "Revestimientos",
+    "portada": "/assets/Fotos/Revestimientos/Aguadas/Foto portada.webp",
+    "media": [
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Revestimientos/Aguadas/Foto portada.webp"
+      },
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Revestimientos/Aguadas/2.webp"
+      },
+      {
+        "type": "video",
+        "src": "/assets/Fotos/Revestimientos/Aguadas/7.mov"
+      },
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Revestimientos/Aguadas/8.webp"
+      },
+      {
+        "type": "video",
+        "src": "/assets/Fotos/Revestimientos/Aguadas/9.mov"
+      }
+    ]
+  },
+  {
+    "id": "revestimientos-funes-gringa",
+    "nombre": "Funes - Gringa",
+    "anio": "2026",
+    "tipo": "Revestimientos",
+    "portada": "/assets/Fotos/Revestimientos/Funes-Gringa/Foto portada.webp",
+    "media": [
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Revestimientos/Funes-Gringa/Foto portada.webp"
+      },
+      {
+        "type": "video",
+        "src": "/assets/Fotos/Revestimientos/Funes-Gringa/2.mov"
+      },
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Revestimientos/Funes-Gringa/3.webp"
+      },
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Revestimientos/Funes-Gringa/4.webp"
+      },
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Revestimientos/Funes-Gringa/5.webp"
+      },
+      {
+        "type": "video",
+        "src": "/assets/Fotos/Revestimientos/Funes-Gringa/6.mov"
+      },
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Revestimientos/Funes-Gringa/7.webp"
+      },
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Revestimientos/Funes-Gringa/8.webp"
+      },
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Revestimientos/Funes-Gringa/9.webp"
+      },
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Revestimientos/Funes-Gringa/10.webp"
+      }
+    ]
+  },
+  {
+    "id": "revestimientos-haras-de-funes",
+    "nombre": "Haras de Funes",
+    "anio": "2026",
+    "tipo": "Revestimientos",
+    "portada": "/assets/Fotos/Revestimientos/Haras de Funes/Foto portada.webp",
+    "media": [
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Revestimientos/Haras de Funes/Foto portada.webp"
+      },
+      {
+        "type": "video",
+        "src": "/assets/Fotos/Revestimientos/Haras de Funes/2.mov"
+      },
+      {
+        "type": "video",
+        "src": "/assets/Fotos/Revestimientos/Haras de Funes/3.mov"
+      },
+      {
+        "type": "video",
+        "src": "/assets/Fotos/Revestimientos/Haras de Funes/4.mov"
+      }
+    ]
+  },
+  {
+    "id": "revestimientos-kentucky",
+    "nombre": "Kentucky",
+    "anio": "2026",
+    "tipo": "Revestimientos",
+    "portada": "/assets/Fotos/Revestimientos/Kentucky/Foto portada.webp",
+    "media": [
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Revestimientos/Kentucky/Foto portada.webp"
+      },
+      {
+        "type": "video",
+        "src": "/assets/Fotos/Revestimientos/Kentucky/2.mov"
+      },
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Revestimientos/Kentucky/3.png"
+      },
+      {
+        "type": "video",
+        "src": "/assets/Fotos/Revestimientos/Kentucky/4.mov"
+      }
+    ]
+  },
+  {
+    "id": "revestimientos-pujato",
+    "nombre": "Pujato",
+    "anio": "2026",
+    "tipo": "Revestimientos",
+    "portada": "/assets/Fotos/Revestimientos/Pujato/Foto portada.webp",
+    "media": [
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Revestimientos/Pujato/Foto portada.webp"
+      },
+      {
+        "type": "video",
+        "src": "/assets/Fotos/Revestimientos/Pujato/2.mov"
+      },
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Revestimientos/Pujato/3.webp"
+      },
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Revestimientos/Pujato/4.webp"
+      },
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Revestimientos/Pujato/5.webp"
+      }
+    ]
+  },
+  {
+    "id": "revestimientos-vconstitucion",
+    "nombre": "V. Constitución",
+    "anio": "2026",
+    "tipo": "Revestimientos",
+    "portada": "/assets/Fotos/Revestimientos/VConstitución/Foto portada.webp",
+    "media": [
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Revestimientos/VConstitución/Foto portada.webp"
+      },
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Revestimientos/VConstitución/2.webp"
+      },
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Revestimientos/VConstitución/3.webp"
+      },
+      {
+        "type": "video",
+        "src": "/assets/Fotos/Revestimientos/VConstitución/4.mov"
+      },
+      {
+        "type": "video",
+        "src": "/assets/Fotos/Revestimientos/VConstitución/5.mov"
+      }
+    ]
+  },
+  {
+    "id": "trabajos-en-altura",
+    "nombre": "Trabajos en Altura",
+    "anio": "2026",
+    "tipo": "Trabajos de Altura",
+    "portada": "/assets/Fotos/Trabajos en Altura/Foto portada.webp",
+    "media": [
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Trabajos en Altura/Foto portada.webp"
+      },
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Trabajos en Altura/2.webp"
+      },
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Trabajos en Altura/3.webp"
+      },
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Trabajos en Altura/4.webp"
+      },
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Trabajos en Altura/5.webp"
+      },
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Trabajos en Altura/6.webp"
+      },
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Trabajos en Altura/7.webp"
+      },
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Trabajos en Altura/8.webp"
+      },
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Trabajos en Altura/9.webp"
+      },
+      {
+        "type": "image",
+        "src": "/assets/Fotos/Trabajos en Altura/10.webp"
+      }
+    ]
+  }
+]

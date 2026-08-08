@@ -1,0 +1,118 @@
+@keyframes card-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.card {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: var(--color-neutral-900);
+  overflow: hidden;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid var(--color-white);
+    outline-offset: -2px;
+  }
+
+  &__skeleton {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      100deg,
+      var(--color-neutral-900) 35%,
+      var(--color-neutral-700) 50%,
+      var(--color-neutral-900) 65%
+    );
+    background-size: 300% 100%;
+    animation: card-shimmer 1.6s ease-in-out infinite;
+  }
+
+  &__error {
+    position: absolute;
+    inset: 0;
+    background: var(--color-neutral-900);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-neutral-600);
+    font-size: 12px;
+    padding: 12px;
+    text-align: center;
+  }
+
+  &__media {
+    position: absolute;
+    inset: 0;
+  }
+
+  &__media-el {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+  }
+
+  &:hover &__media-el {
+    transform: scale(1.05);
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.85),
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.85)
+    );
+  }
+
+  &__overlay-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__tipo {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--color-neutral-400);
+    border-bottom: 1px dotted var(--color-neutral-600);
+    padding-bottom: 4px;
+  }
+
+  &__galeria {
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    color: var(--color-neutral-500);
+  }
+
+  &__titulo {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.4;
+    margin: 0;
+
+    @media (min-width: 768px) {
+      font-size: 16px;
+    }
+  }
+
+  &__anio {
+    font-size: 12px;
+    text-align: right;
+    color: var(--color-neutral-400);
+    border-top: 1px dotted var(--color-neutral-600);
+    padding-top: 4px;
+  }
+}
