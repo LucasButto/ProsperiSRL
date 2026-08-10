@@ -56,8 +56,18 @@
     position: absolute;
     inset: 0;
     background:
-      linear-gradient(180deg, rgba(19, 18, 17, 0.55) 0%, rgba(19, 18, 17, 0.35) 35%, var(--bg) 96%),
-      linear-gradient(90deg, rgba(19, 18, 17, 0.5) 0%, rgba(19, 18, 17, 0.15) 45%, rgba(19, 18, 17, 0.5) 100%);
+      linear-gradient(
+        180deg,
+        rgba(19, 18, 17, 0.55) 0%,
+        rgba(19, 18, 17, 0.35) 35%,
+        var(--bg) 96%
+      ),
+      linear-gradient(
+        90deg,
+        rgba(19, 18, 17, 0.5) 0%,
+        rgba(19, 18, 17, 0.15) 45%,
+        rgba(19, 18, 17, 0.5) 100%
+      );
   }
 
   &__content {
@@ -70,6 +80,7 @@
     width: clamp(280px, 44vw, 620px);
     height: auto;
     margin: 4px 0 32px;
+    filter: drop-shadow(2px 4px 6px black);
   }
 
   &__kicker {
@@ -109,7 +120,9 @@
     letter-spacing: 0.01em;
     padding: 0 0 8px;
     cursor: pointer;
-    transition: border-color 0.25s ease, gap 0.25s ease;
+    transition:
+      border-color 0.25s ease,
+      gap 0.25s ease;
 
     &:hover {
       border-color: var(--accent);

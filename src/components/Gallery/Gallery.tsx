@@ -5,6 +5,7 @@ import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRound
 import PlayArrowRoundedIcon from "@mui/icons-material/PlayArrowRounded";
 import type { Proyecto } from "../../types/proyecto";
 import { encodeAssetPath } from "../../utils/encodeAssetPath";
+import { netlifyImage } from "../../utils/netlifyImage";
 import "./Gallery.scss";
 
 interface GalleryProps {
@@ -96,7 +97,7 @@ function Gallery({ proyecto, onClose }: GalleryProps) {
             ) : (
               <img
                 key={current.src}
-                src={encodeAssetPath(current.src)}
+                src={netlifyImage(current.src, { width: 1600, quality: 78 })}
                 alt={`${proyecto.nombre} ${index + 1}`}
                 className="gallery__media-el"
                 style={{ opacity: isLoading ? 0 : 1 }}
@@ -139,7 +140,7 @@ function Gallery({ proyecto, onClose }: GalleryProps) {
                   />
                 ) : (
                   <img
-                    src={encodeAssetPath(item.src)}
+                    src={netlifyImage(item.src, { width: 120, height: 120, fit: "cover", quality: 55 })}
                     alt=""
                     className="gallery__thumb-el"
                     loading="lazy"

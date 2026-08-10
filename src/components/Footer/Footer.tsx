@@ -10,7 +10,7 @@ function Footer() {
             © {new Date().getFullYear()} — Construcción de alto estándar,
             Rosario
           </span>
-          <p className="footer__credit">|</p>
+          <p className="footer__separator">|</p>
           <a
             href="https://portfolio-lucasbutto.vercel.app/"
             target="_blank"

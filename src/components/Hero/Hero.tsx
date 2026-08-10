@@ -1,15 +1,23 @@
 import { motion } from "framer-motion";
 import { scrollToSection } from "../../utils/scrollTo";
-import { encodeAssetPath } from "../../utils/encodeAssetPath";
+import { netlifyImage } from "../../utils/netlifyImage";
 import "./Hero.scss";
+
+const HERO_BACKDROP = "/assets/Fotos/Revestimientos/Haras de Funes/Foto portada.webp";
 
 function Hero() {
   return (
     <section id="home" className="hero">
       <div className="hero__backdrop">
         <img
-          src={encodeAssetPath("/assets/Fotos/Revestimientos/Haras de Funes/Foto portada.webp")}
+          src={netlifyImage(HERO_BACKDROP, { width: 1600, quality: 65, fit: "cover" })}
+          srcSet={[800, 1200, 1600, 2000]
+            .map((w) => `${netlifyImage(HERO_BACKDROP, { width: w, quality: 65, fit: "cover" })} ${w}w`)
+            .join(", ")}
+          sizes="100vw"
           alt=""
+          fetchPriority="high"
+          decoding="async"
           className="hero__backdrop-img"
         />
         <div className="hero__backdrop-overlay" />

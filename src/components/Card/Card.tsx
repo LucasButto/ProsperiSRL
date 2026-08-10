@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import type { Proyecto } from "../../types/proyecto";
-import { encodeAssetPath } from "../../utils/encodeAssetPath";
+import { netlifyImage } from "../../utils/netlifyImage";
 import "./Card.scss";
 
 interface CardProps {
@@ -30,7 +30,19 @@ function Card({ proyecto, onClick }: CardProps) {
 
         {!hasError && proyecto.portada && (
           <motion.img
-            src={encodeAssetPath(proyecto.portada)}
+            src={netlifyImage(proyecto.portada, { width: 700, height: 525, fit: "cover", quality: 70 })}
+            srcSet={[400, 700, 1000]
+              .map(
+                (w) =>
+                  `${netlifyImage(proyecto.portada as string, {
+                    width: w,
+                    height: Math.round((w * 3) / 4),
+                    fit: "cover",
+                    quality: 70,
+                  })} ${w}w`,
+              )
+              .join(", ")}
+            sizes="(min-width: 1280px) 33vw, (min-width: 640px) 50vw, 100vw"
             alt={proyecto.nombre}
             className="card__media-el"
             loading="lazy"
