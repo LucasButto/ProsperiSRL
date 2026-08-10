@@ -12,23 +12,23 @@
       },
       {
         "type": "video",
-        "src": "/assets/Fotos/Alb/Buchanan 462/2.mov"
+        "src": "/assets/Fotos/Alb/Buchanan 462/2.mp4"
       },
       {
         "type": "video",
-        "src": "/assets/Fotos/Alb/Buchanan 462/3.mov"
+        "src": "/assets/Fotos/Alb/Buchanan 462/3.mp4"
       },
       {
         "type": "video",
-        "src": "/assets/Fotos/Alb/Buchanan 462/4.mov"
+        "src": "/assets/Fotos/Alb/Buchanan 462/4.mp4"
       },
       {
         "type": "video",
-        "src": "/assets/Fotos/Alb/Buchanan 462/5.mov"
+        "src": "/assets/Fotos/Alb/Buchanan 462/5.mp4"
       },
       {
         "type": "video",
-        "src": "/assets/Fotos/Alb/Buchanan 462/6.mov"
+        "src": "/assets/Fotos/Alb/Buchanan 462/6.mp4"
       }
     ]
   },
@@ -45,11 +45,11 @@
       },
       {
         "type": "video",
-        "src": "/assets/Fotos/Alb/La paz/2.mov"
+        "src": "/assets/Fotos/Alb/La paz/2.mp4"
       },
       {
         "type": "video",
-        "src": "/assets/Fotos/Alb/La paz/3.mov"
+        "src": "/assets/Fotos/Alb/La paz/3.mp4"
       },
       {
         "type": "image",
@@ -57,7 +57,7 @@
       },
       {
         "type": "video",
-        "src": "/assets/Fotos/Alb/La paz/5.mov"
+        "src": "/assets/Fotos/Alb/La paz/5.mp4"
       }
     ]
   },
@@ -78,11 +78,11 @@
       },
       {
         "type": "video",
-        "src": "/assets/Fotos/Alb/Pje. Zavalla 1/4.mov"
+        "src": "/assets/Fotos/Alb/Pje. Zavalla 1/4.mp4"
       },
       {
         "type": "video",
-        "src": "/assets/Fotos/Alb/Pje. Zavalla 1/5.mov"
+        "src": "/assets/Fotos/Alb/Pje. Zavalla 1/5.mp4"
       },
       {
         "type": "image",
@@ -123,15 +123,15 @@
       },
       {
         "type": "video",
-        "src": "/assets/Fotos/Pintura/Kentucky P/2.mov"
+        "src": "/assets/Fotos/Pintura/Kentucky P/2.mp4"
       },
       {
         "type": "video",
-        "src": "/assets/Fotos/Pintura/Kentucky P/3.mov"
+        "src": "/assets/Fotos/Pintura/Kentucky P/3.mp4"
       },
       {
         "type": "video",
-        "src": "/assets/Fotos/Pintura/Kentucky P/4.mov"
+        "src": "/assets/Fotos/Pintura/Kentucky P/4.mp4"
       }
     ]
   },
@@ -152,7 +152,7 @@
       },
       {
         "type": "video",
-        "src": "/assets/Fotos/Pintura/Zeballos/3.mov"
+        "src": "/assets/Fotos/Pintura/Zeballos/3.mp4"
       },
       {
         "type": "image",
@@ -177,7 +177,7 @@
       },
       {
         "type": "video",
-        "src": "/assets/Fotos/Revestimientos/Aguadas/7.mov"
+        "src": "/assets/Fotos/Revestimientos/Aguadas/7.mp4"
       },
       {
         "type": "image",
@@ -185,7 +185,7 @@
       },
       {
         "type": "video",
-        "src": "/assets/Fotos/Revestimientos/Aguadas/9.mov"
+        "src": "/assets/Fotos/Revestimientos/Aguadas/9.mp4"
       }
     ]
   },
@@ -202,7 +202,7 @@
       },
       {
         "type": "video",
-        "src": "/assets/Fotos/Revestimientos/Funes-Gringa/2.mov"
+        "src": "/assets/Fotos/Revestimientos/Funes-Gringa/2.mp4"
       },
       {
         "type": "image",
@@ -218,7 +218,7 @@
       },
       {
         "type": "video",
-        "src": "/assets/Fotos/Revestimientos/Funes-Gringa/6.mov"
+        "src": "/assets/Fotos/Revestimientos/Funes-Gringa/6.mp4"
       },
       {
         "type": "image",
@@ -251,15 +251,15 @@
       },
       {
         "type": "video",
-        "src": "/assets/Fotos/Revestimientos/Haras de Funes/2.mov"
+        "src": "/assets/Fotos/Revestimientos/Haras de Funes/2.mp4"
       },
       {
         "type": "video",
-        "src": "/assets/Fotos/Revestimientos/Haras de Funes/3.mov"
+        "src": "/assets/Fotos/Revestimientos/Haras de Funes/3.mp4"
       },
       {
         "type": "video",
-        "src": "/assets/Fotos/Revestimientos/Haras de Funes/4.mov"
+        "src": "/assets/Fotos/Revestimientos/Haras de Funes/4.mp4"
       }
     ]
   },
@@ -276,15 +276,15 @@
       },
       {
         "type": "video",
-        "src": "/assets/Fotos/Revestimientos/Kentucky/2.mov"
+        "src": "/assets/Fotos/Revestimientos/Kentucky/2.mp4"
       },
       {
         "type": "image",
-        "src": "/assets/Fotos/Revestimientos/Kentucky/3.png"
+        "src": "/assets/Fotos/Revestimientos/Kentucky/3.webp"
       },
       {
         "type": "video",
-        "src": "/assets/Fotos/Revestimientos/Kentucky/4.mov"
+        "src": "/assets/Fotos/Revestimientos/Kentucky/4.mp4"
       }
     ]
   },
@@ -301,7 +301,7 @@
       },
       {
         "type": "video",
-        "src": "/assets/Fotos/Revestimientos/Pujato/2.mov"
+        "src": "/assets/Fotos/Revestimientos/Pujato/2.mp4"
       },
       {
         "type": "image",
@@ -338,11 +338,11 @@
       },
       {
         "type": "video",
-        "src": "/assets/Fotos/Revestimientos/VConstitución/4.mov"
+        "src": "/assets/Fotos/Revestimientos/VConstitución/4.mp4"
       },
       {
         "type": "video",
-        "src": "/assets/Fotos/Revestimientos/VConstitución/5.mov"
+        "src": "/assets/Fotos/Revestimientos/VConstitución/5.mp4"
       }
     ]
   },
