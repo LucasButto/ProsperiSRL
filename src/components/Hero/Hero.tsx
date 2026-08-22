@@ -1,33 +1,38 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { scrollToSection } from "../../utils/scrollTo";
-import { netlifyImage } from "../../utils/netlifyImage";
+import { HERO_LQIP, HERO_SIZES, heroSrc, heroSrcSet } from "../../config/heroImage";
 import "./Hero.scss";
 
-const HERO_BACKDROP =
-  "/assets/Fotos/Revestimientos/Haras de Funes/Foto portada.webp";
+const isDev = import.meta.env.DEV;
 
 function Hero() {
+  const [loaded, setLoaded] = useState(false);
+
   return (
     <section id="home" className="hero">
       <div className="hero__backdrop">
-        <img
-          src={netlifyImage(HERO_BACKDROP, {
-            width: 1600,
-            quality: 65,
-            fit: "cover",
-          })}
-          srcSet={[800, 1200, 1600, 2000]
-            .map(
-              (w) =>
-                `${netlifyImage(HERO_BACKDROP, { width: w, quality: 65, fit: "cover" })} ${w}w`,
-            )
-            .join(", ")}
-          sizes="100vw"
-          alt=""
-          fetchPriority="high"
-          decoding="async"
-          className="hero__backdrop-img"
-        />
+        <div className="hero__backdrop-media">
+          <div
+            className="hero__backdrop-lqip"
+            style={{ backgroundImage: `url("${HERO_LQIP}")` }}
+          />
+          <img
+            src={heroSrc(isDev)}
+            srcSet={heroSrcSet(isDev)}
+            sizes={HERO_SIZES}
+            alt=""
+            fetchPriority="high"
+            decoding="async"
+            // A cached image can finish before React attaches onLoad, which would
+            // otherwise leave it stuck at opacity 0 over the placeholder.
+            ref={(node) => {
+              if (node?.complete) setLoaded(true);
+            }}
+            onLoad={() => setLoaded(true)}
+            className={`hero__backdrop-img${loaded ? " hero__backdrop-img--loaded" : ""}`}
+          />
+        </div>
         <div className="hero__backdrop-overlay" />
       </div>
 
