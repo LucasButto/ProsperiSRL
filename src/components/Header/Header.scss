@@ -147,7 +147,9 @@
     z-index: 50;
     height: calc(100vh - 76px);
     height: calc(100dvh - 76px);
-    background: var(--bg);
+    background: var(--bg-transparent);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
     display: flex;
     flex-direction: column;
     justify-content: center;
