@@ -1,10 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { scrollToSection } from "../../utils/scrollTo";
-import { HERO_LQIP, HERO_SIZES, heroSrc, heroSrcSet } from "../../config/heroImage";
+import { HERO_LQIP, HERO_SRC } from "../../config/heroImage";
 import "./Hero.scss";
-
-const isDev = import.meta.env.DEV;
 
 function Hero() {
   const [loaded, setLoaded] = useState(false);
@@ -18,9 +16,7 @@ function Hero() {
             style={{ backgroundImage: `url("${HERO_LQIP}")` }}
           />
           <img
-            src={heroSrc(isDev)}
-            srcSet={heroSrcSet(isDev)}
-            sizes={HERO_SIZES}
+            src={HERO_SRC}
             alt=""
             fetchPriority="high"
             decoding="async"
