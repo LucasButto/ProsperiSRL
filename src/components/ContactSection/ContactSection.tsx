@@ -3,11 +3,10 @@ import "./ContactSection.scss";
 
 type Status = "idle" | "sending" | "success" | "error";
 
-function encode(data: Record<string, string>) {
-  return Object.keys(data)
-    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
-    .join("&");
-}
+const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
+// Public by design (Web3Forms only delivers to the email registered with the key).
+// Set VITE_WEB3FORMS_ACCESS_KEY in Vercel's env vars and in a local .env.local.
+const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY as string | undefined;
 
 function ContactSection() {
   const [status, setStatus] = useState<Status>("idle");
@@ -15,19 +14,41 @@ function ContactSection() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
-    const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
+    const data = new FormData(form);
+
+    // Honeypot: humans never see this field, bots fill it. Fake a success so
+    // they don't retry, but don't send anything.
+    if (data.get("botcheck")) {
+      setStatus("success");
+      form.reset();
+      return;
+    }
 
     setStatus("sending");
     try {
-      const res = await fetch("/", {
+      if (!WEB3FORMS_ACCESS_KEY) {
+        throw new Error("Missing VITE_WEB3FORMS_ACCESS_KEY");
+      }
+      const res = await fetch(WEB3FORMS_ENDPOINT, {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode(data),
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: "Nueva consulta desde prosperisrl.com",
+          from_name: "Prosperi SRL - Web",
+          name: data.get("nombre"),
+          email: data.get("email"),
+          message: data.get("mensaje"),
+        }),
       });
-      if (!res.ok) throw new Error("Network response was not ok");
+      const result = (await res.json()) as { success: boolean; message?: string };
+      if (!res.ok || !result.success) {
+        throw new Error(result.message ?? "Web3Forms request failed");
+      }
       setStatus("success");
       form.reset();
-    } catch {
+    } catch (err) {
+      console.error("Contact form error:", err);
       setStatus("error");
     }
   };
@@ -74,23 +95,10 @@ function ContactSection() {
             </div>
           </dl>
 
-          <form
-            name="contacto"
-            method="POST"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-            onSubmit={handleSubmit}
-            className="contact__form"
-          >
-            <input type="hidden" name="form-name" value="contacto" />
-            <input
-              type="hidden"
-              name="subject"
-              value="Nueva consulta desde prosperisrl.com"
-            />
+          <form name="contacto" onSubmit={handleSubmit} className="contact__form">
             <p className="contact__honeypot">
               <label>
-                No completar: <input name="bot-field" tabIndex={-1} autoComplete="off" />
+                No completar: <input name="botcheck" tabIndex={-1} autoComplete="off" />
               </label>
             </p>
 
